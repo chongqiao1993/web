@@ -1,0 +1,45 @@
+<ion-content class="has-header has-footer">
+
+  <ion-bar-subheader class="text-left">
+    <h2 class="title royal padding-left padding-top" style="text-align:center;">购物车</h2>
+  </ion-bar-subheader>
+
+
+
+  <div class="container" ng-if="!hide">
+   
+    <div class="row" ng-repeat="(key,car) in data1" >
+        <div class="col">
+            <ion-list >
+                <div class="list shopcar_list">
+                    <div class="item item-thumbnail-left">
+                      <img ng-src="./shopApi/images/{{key}}.jpg">
+                      <h2><<{{car.title}}>></h2>
+                      <p>单价：{{car.price | currency : "&yen;"}}</p>
+                      <p>小计：{{car.price * car.num | currency : "&yen;"}}</p>
+                      <div>
+                        <button type="button" class="left" ng-click="sub(car.id)">-</button>
+                        <span>{{car.num}}</span>
+                        <button type="button" class="right" ng-click="sum(car.id)">+</button>
+
+                        <button class="button button-small" ng-click="deleteShopcar(key)">删除</button>
+                     </div>
+                    </div>
+                </div>
+            </ion-list>
+        </div>
+        
+    </div>
+    <div style="padding:10px;">
+        <p>总价:{{total | currency : "&yen;"}}</p>
+        <button class="button button-assertive" ng-click="gotoShopping()">继续购物</button>
+        <button class="button button-royal" ng-click="payment()">结算</button>
+    </div>
+  </div>
+
+  <div ng-if="hide">
+    你的购物车空空如也哦，赶快去首页选购吧~
+  </div>
+
+
+</ion-content>

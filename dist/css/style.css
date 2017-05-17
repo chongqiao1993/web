@@ -1,0 +1,31 @@
+/*home*/
+.box{
+	margin-top:10px;
+	border:1px solid #ccc;
+
+}
+.box img{
+	width:100px;
+}
+.left{
+	float:left;
+}
+.overflow{
+	overflow: hidden;
+}
+.table{
+	width:95% !important;;
+}
+.table input{
+	width:10px !important;
+	
+}
+.table td,th{
+	border:1px solid #ccc;
+	border-collapse: collapse;
+	/*width:20px !important;*/
+}
+.table .left{
+	float:left;
+	margin:2px;
+}

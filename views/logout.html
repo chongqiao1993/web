@@ -1,0 +1,46 @@
+<ion-content class="has-header has-footer">
+  <ion-bar-subheader align-title="center" class="bar-light">
+    <h2 class="title padding" style="text-align:center;">欢迎你,{{u.user_name}}</h2>
+  </ion-bar-subheader>
+  
+
+  <div class="container">
+	<div class="title"><h3>订单详情</h3></div>
+	
+	<div class="order_detail">
+		<ul class="list">
+			<li class="item item-thumbnail" ng-repeat="order in orderDetails" >
+									
+					
+					<div class="box overflow">
+						<div class="left" >
+							
+							<img style="margin-top: 15px;" ng-src="./shopApi/images/{{order.book_image}}" alt="">
+							
+						</div>
+						<div class="left padding">
+								<h2 class="title">交易成功</h2>
+								<p>订单时间:{{order.order_addtime}}</p>
+								<p>订单编号：{{order.order_id}}</p>
+								<p>书名：{{order.book_title}}</p>
+								<p>单价{{order.book_price| currency :"&yen;"}}</p>
+								<span>共{{order.book_num}}件商品</span>
+								<span>合计{{order.book_price * order.book_num | currency :"&yen;"}}</span>
+								<!-- <span>合计{{ heji | currency :"&yen;"}}</span> -->
+
+						</div>
+					</div>
+			
+			</li>
+			
+		</ul>
+		总价：<span class="assertive padding">{{zongtotal | currency :"&yen;"}}</span>
+		
+	</div>
+</div>
+
+  	<div class="list">
+		<div class="item" style="border:none"></div>
+	</div>
+
+</ion-content>

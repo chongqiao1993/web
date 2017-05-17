@@ -1,0 +1,26 @@
+<ion-content class="has-header has-footer">
+
+
+	<ion-bar-subheader class="bar-light" align-title="center">
+    <h2 class="title padding-left padding-top" style="text-align: center">用户登录</h2>
+  </ion-bar-subheader>
+
+  <div class="list list-inset">
+    <form name="regForm" ng-submit="loginBtn()">
+      <label class="item item-input">
+        <input type="text" placeholder="用户名" ng-model="u.username">
+      </label>
+      <label class="item item-input">
+        <input type="password" placeholder="密码" ng-model="u.password">
+      </label>
+      <button class="button button-full button-royal">
+       登录
+      </button>
+      
+    </form>
+    <a href="#/reg">还没有用户名？请注册</a>
+  </div>
+
+
+
+</ion-content>

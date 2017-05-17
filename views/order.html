@@ -1,0 +1,26 @@
+<ion-content class="has-header has-footer">
+
+	<ion-bar-subheader align-title="left" class="bar-light">
+    <h2 class="title">订单</h2>
+  </ion-bar-subheader>
+  
+  <div class="row">
+    <div class="col">
+      <div class="list" ng-repeat="(key,car) in data1">
+        <div class="item item-avatar">
+            <img ng-src="./shopApi/images/{{key}}.jpg">
+            <h2>{{car.title}}</h2>
+            <p>{{car.price | currency : "&yen;"}}</p>
+          </div>
+      </div>
+    </div>
+  </div>
+  <p>总价{{total | currency : "&yen;"}}</p>
+  
+
+  <ion-bar-subheader align-title="left" class="bar-light">
+    <button class="button button-royal" ng-click="submitOrderTo()" >提交订单</button>
+  </ion-bar-subheader>
+
+
+</ion-content>

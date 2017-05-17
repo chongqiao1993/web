@@ -1,0 +1,63 @@
+<ion-content class="has-header has-footer">
+
+	<ion-slide-box
+		auto-play="true"
+		does-continue="true"
+		slide-interval=3000
+		show-pager="true"
+		delegate-handle="myHandle"
+		pager-click=slideChange(index)
+	>
+		<ion-slide>
+			<img class="full-image" src="images/1.png" alt="">
+		</ion-slide>
+		<ion-slide>
+			<img class="full-image" src="images/2.jpg" alt="">
+		</ion-slide>
+		<ion-slide>
+			<img class="full-image" src="images/3.jpg" alt="">
+		</ion-slide>
+		<ion-slide>
+			<img class="full-image" src="images/4.jpg" alt="">
+		</ion-slide>
+	</ion-slide-box>
+
+
+	<ul class="list">
+
+			<div class=" item-input-inset">
+				<label class="item-input-wrapper">
+				  <input type="text" placeholder="请输入你要搜索的内容" ng-model="search.content">
+				</label>
+				<button class="button button-small" ng-click="searchThing()">
+				  搜索
+				</button>
+			</div>
+
+		<li class="item item-thumbnail book-item" ng-repeat="data in datalist">			
+
+			<div class="box overflow">
+				<div class="left" >
+					<a ui-sref="search({id:data.id,img:data.images[0].image_name})">
+						<img ng-src="./shopApi/images/{{data.images[0].image_name}}" alt="">
+					</a>
+				</div>
+				<div class="left" style="padding:10px">
+						<h2>{{data.title}}</h2>
+						<p>{{ data.price | currency : "&yen;"}}</p>
+						<div>
+							<a class="button button-royal" ng-click="addCart(data)">加入购物车</a>
+						</div>
+				</div>
+			</div>
+		</li>
+	</ul>
+
+		
+
+	<ion-infinite-scroll
+	    on-infinite="loadMore()" ng-if="scroll" icon="ion-load-c" immediate-check="false"
+	    distance="10%">
+	 </ion-infinite-scroll>
+	 
+</ion-content>

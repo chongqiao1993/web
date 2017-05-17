@@ -1,0 +1,82 @@
+<ion-content class="has-header has-footer">
+<ion-bar-subheader align-title="left" class="bar-light">
+  <h2 class="title">商品详情</h2>
+</ion-bar-subheader>
+
+
+
+<div class="list card">
+
+	<div class="item item-avatar">
+		<img ng-src="./shopApi/images/{{img}}">
+		<h2>书名：{{data.book_title}}</h2>
+		<span><small>作者：{{data.book_author}}</small></span>
+		<p>价格：{{data.book_price | currency :"&yen;"}}</p>
+		
+		<p>发行时间：{{data.book_pudate * 1000 | date : "yyyy-MM-dd HH:MM:ss"}}</p>
+	</div>
+
+	简介：<div id="div"></div>
+
+	<div class="item item-image">
+		<img ng-src="./shopApi/images/{{img}}">
+		
+	</div>
+
+	<a class="item button button-assertive" href="#">
+		返回商品列表
+	</a>
+
+</div>
+
+<div>
+  	<ion-bar-subheader align-title="left" class="bar-light">
+	    <h3 class="title">用户评论</h3>
+	   </ion-bar-subheader>
+
+		<div class="row">
+			<div class="col">
+				<div class="list">
+				  <label class="item item-input item-stacked-label">
+				    <span class="input-label">请输入<<{{data.book_title}}>>的评论内容</span>
+				    <!-- <input type="text" ng-model="com.content" placeholder="请输入评论内容"> -->
+				    <textarea name="" id="" cols="5" rows="5" ng-model="com.content"></textarea>
+				  </label>
+				</div>
+			</div>
+		</div>
+  </div>
+	
+    <button class="button button-royal" ng-click="submitComment()">提交评论</button>
+	
+	
+   <div>
+	  	<ion-bar-subheader align-title="left" class="bar-light">
+		    <h3 class="title">评论详情</h3>
+		</ion-bar-subheader>
+
+
+		<div class="row">
+			<div class="col">
+				<div class="list">
+					<div class="item" ng-repeat="data in aaaaa">
+						<p>用户名：{{data.user_id}}</p>
+						<p>评论详情：{{data.comment_content}}</p>
+						<p>评论时间：{{data.comment_addtime}}</p>
+					</div>
+					<!-- <div class="item">用户名：{{com.user_id}}</div>
+					<div class="item">评论详情：{{com.content1}}</div>
+					<div class="item">评论时间：{{com.addtime}}</div> -->
+				</div>
+			</div>
+		</div>
+			
+			
+   </div>
+	   
+	   
+
+
+
+
+</ion-content>
